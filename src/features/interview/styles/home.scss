@@ -1,0 +1,222 @@
+.home {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    padding: 1rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+        min-height: 78vh;
+        width: min(1120px, 94vw);
+        border-radius: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: clamp(1rem, 3vw, 3.25rem);
+        padding: 1rem;
+
+
+        .left {
+            background-color: rgba(245, 245, 245, 0.145);
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 0;
+            min-height: clamp(420px, 68vh, 700px);
+            border: 1px solid white;
+            border-radius: 5vh;
+            padding: 2vw;
+
+            label {
+                font-size: clamp(1rem, 1.5vw, 1.45rem);
+                margin-bottom: 2vh;
+            }
+
+            textarea {
+                flex: 1;
+                min-height: 0;
+                width: 100%;
+                background-color: rgba(245, 245, 245, 0.716);
+                resize: none;
+                padding: 2vw;
+                border-radius: 5vh;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+        }
+
+        .right {
+            background-color: rgba(245, 245, 245, 0.145);
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 0;
+            min-height: clamp(420px, 68vh, 700px);
+            border: 1px solid white;
+            border-radius: 5vh;
+            margin-left: 0;
+            padding: 2vw;
+
+            label {
+                font-size: clamp(0.95rem, 1.2vw, 1.2rem);
+                margin-bottom: 2vh;
+                margin-top: 2%;
+            }
+
+            .resume-label {
+                border: 1px solid white;
+                border-radius: 5vh;
+                padding: 0.75rem 1rem;
+                cursor: pointer;
+                font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+            }
+
+            #resume {
+                display: none;
+            }
+
+            .input-group {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #selfDescription {
+                resize: none;
+                width: 100%;
+                min-height: 180px;
+                padding: 5%;
+                border: 1px solid white;
+                border-radius: 5vh;
+                background-color: rgba(245, 245, 245, 0.716);
+                box-sizing: border-box;
+                flex: 1;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            button {
+                width: 80%;
+                min-height: 48px;
+                border: 1px solid white;
+                border-radius: 5vh;
+                color: rgb(78, 75, 75);
+                margin-top: auto;
+                margin-left: 10%;
+                cursor: pointer;
+                transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1), background-color 240ms cubic-bezier(0.22, 1, 0.36, 1), color 240ms cubic-bezier(0.22, 1, 0.36, 1);
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+                will-change: transform, box-shadow;
+
+                &:hover {
+                    transform: translateY(-2px) scale(1.01);
+                    background-color: rgba(255, 255, 255, 0.95);
+                    color: rgb(45, 45, 45);
+                    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+                }
+
+                &:active {
+                    transform: translateY(1px) scale(0.985);
+                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+                }
+
+                &:focus-visible {
+                    outline: 2px solid rgba(255, 255, 255, 0.9);
+                    outline-offset: 3px;
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 980px) {
+    .home {
+        .card {
+            min-height: auto;
+            padding: 1.1rem;
+
+            .left,
+            .right {
+                height: auto;
+                width: 50%;
+                border-radius: 2rem;
+                padding: 1.1rem;
+            }
+
+            .left textarea {
+                min-height: 280px;
+            }
+
+            .right #selfDescription {
+                min-height: 180px;
+            }
+
+            .right button {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .home {
+        padding: 0.75rem 0 1.25rem;
+
+        .card {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.9rem;
+
+            .left,
+            .right {
+                width: 100%;
+            }
+
+            .left textarea {
+                min-height: 220px;
+            }
+
+            .right {
+                .resume-label {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                #selfDescription {
+                    min-height: 160px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .home {
+        .card {
+            border-radius: 1.2rem;
+            padding: 0.7rem;
+
+            .left,
+            .right {
+                border-radius: 1.2rem;
+                padding: 0.9rem;
+            }
+
+            .left textarea,
+            .right #selfDescription {
+                border-radius: 1rem;
+            }
+        }
+    }
+}

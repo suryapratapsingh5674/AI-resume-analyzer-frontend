@@ -1,0 +1,91 @@
+main {
+    min-height: 100vh;
+    width: 100%;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: clamp(1rem, 4vw, 2.2rem);
+}
+
+.form-container {
+    border-radius: 0.75rem;
+    border: 1px solid white;
+    width: min(460px, 100%);
+    padding: clamp(1.1rem, 4vw, 2rem);
+    background-color: #1e293b;
+
+    button {
+        border: 1px solid black;
+        border-radius: 0.75rem;
+        padding-inline: 20px;
+        padding-block: 8px;
+        margin-top: 10px;
+        width: 100%;
+        background-color: #38bdf8;
+        color: #f8fafc;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    button:hover {
+        background-color: #0ea5e9;
+        /* slightly darker */
+        transform: scale(1.05);
+        /* grow */
+    }
+
+    /* Active (click) effect */
+    button:active {
+        background-color: #0284c7;
+        /* even darker */
+        transform: scale(0.95);
+        /* shrink */
+    }
+
+    p {
+        margin-top: 20px;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #38bdf8;
+    }
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    input {
+        border: 1px solid #334155;
+        outline: none;
+        padding-inline: 1rem;
+        padding-block: 0.75rem;
+        border-radius: 0.75rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .form-container {
+        border-radius: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .input-group {
+        input {
+            padding-inline: 0.8rem;
+            padding-block: 0.65rem;
+        }
+    }
+}
