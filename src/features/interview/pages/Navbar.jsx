@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="brand">
         <img
-          src="../../../../public/logo.png"
+          src="/logo.png"
           alt="logo"
           className="navimage"
         />
